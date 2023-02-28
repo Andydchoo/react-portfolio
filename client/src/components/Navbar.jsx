@@ -14,9 +14,10 @@
 
 //  - Breakpoints arent importing properly with display property
 //  - Icons on the right are awkwardly spaced on md size
+//  - Opacity on background is messed up
 
 import { React, useState } from 'react';
-import { AppBar, IconButton, Toolbar, Box, Typography, Menu, Container, Button, MenuItem, Divider, Fade } from '@mui/material';
+import { AppBar, IconButton, Toolbar, Box, Typography, Menu, Container, Button, MenuItem, Divider, Fade, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from "../styles/styles";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -27,7 +28,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export default function Navbar() {
   const [anchorEl, setanchorEl] = useState(null);
 
-  const pages = ['// About', '// Skills', '// Portfolio', '// Contact'];
+  const pages = ['About', 'Skills', 'Portfolio', 'Contact'];
 
   const handleOpen = (event) => {
     setanchorEl(event.currentTarget);
@@ -39,7 +40,8 @@ export default function Navbar() {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="sticky" elevation={2} sx={{ backgroundColor: 'background.main', opacity: '.89' }}>
+      <CssBaseline />
+      <AppBar position="sticky" elevation={3} sx={{ backgroundColor: 'background.default', opacity: '.89' }}>
         <Container>
           <Toolbar disableGutters>
             <Box
@@ -60,7 +62,7 @@ export default function Navbar() {
               <Menu
                 id="menu-nav"
                 anchorEl={anchorEl}
-                elevation={3}
+                elevation={4}
                 anchorOrigin={{
                   vertical: 'bottom',
                   horizontal: 'left',
@@ -78,8 +80,8 @@ export default function Navbar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleClose} sx={{ backgroundColor: 'background.main', color: 'white.main', opacity: '.84' }}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page} onClick={handleClose} sx={{ backgroundColor: 'background.default', color: 'white.main', opacity: '.84' }}>
+                    <Typography textAlign="center" href={page}>- {page}</Typography>
                     <Divider />
                   </MenuItem>
                 ))}
@@ -89,7 +91,7 @@ export default function Navbar() {
               variant="h5"
               noWrap
               component="a"
-              href=""
+              href="#about"
               sx={{
                 mr: 2,
                 display: 'flex',
@@ -113,9 +115,15 @@ export default function Navbar() {
                 <Button
                   key={page}
                   onClick={handleClose}
-                  sx={{ margin: 2, color: 'white.main', display: 'block', fontFamily: 'Open sans' }}
+                  href={page}
+                  sx={{
+                    margin: 2,
+                    color: 'white.main',
+                    display: 'block',
+                    fontFamily: 'Open sans'
+                  }}
                 >
-                  {page}
+                  // {page}
                 </Button>
               ))}
             </Box>
@@ -125,10 +133,22 @@ export default function Navbar() {
                 flexGrow: 1,
                 display: { xs: 'none', sm: 'flex' },
               }}>
-              <Button sx={{ color: 'white.main' }}>
+              <Button
+                href="https://github.com/Andydchoo"
+                target="_blank"
+                sx={{
+                  color: 'white.main'
+                }}
+              >
                 <GitHubIcon />
               </Button>
-              <Button sx={{ color: 'white.main' }}>
+              <Button
+                href='https://www.linkedin.com/in/andychoo'
+                target='blank'
+                sx={{
+                  color: 'white.main'
+                }}
+              >
                 <LinkedInIcon />
               </Button>
             </Box>

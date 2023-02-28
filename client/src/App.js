@@ -1,14 +1,16 @@
 import { ThemeProvider } from '@emotion/react';
+import { CssBaseline } from "@mui/material";
 import { theme } from "./styles/styles";
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import About from './components/About';
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <CssBaseline />
+      <div className="App" >
         <Navbar />
-        <Hero />
+        <About />
       </div>
     </ThemeProvider>
   );
