@@ -3,6 +3,7 @@ import { CssBaseline } from "@mui/material";
 import { theme } from "./styles/styles";
 import Navbar from './components/Navbar';
 import About from './components/About';
+import Skills from './components/Skills';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <div className="App" >
         <Navbar />
         <About />
+        <Skills />
       </div>
     </ThemeProvider>
   );

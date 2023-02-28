@@ -2,7 +2,7 @@
 
 //  - Make hover effect take up entire height of navbar
 //  - Fancy Animations would be nice
-//  - Navigation links should work
+
 
 //  Issues
 
@@ -11,7 +11,8 @@
 //      -Every item seems to stretch out until large view-width is reached.
 //      -Then it just constantly slides towards the middle, at the same width.
 //      -Seems to be an issue with *flexgrow* potentially?
-
+//  - Navigation links should work
+//      - Menu links dont work, but the navbar links do.
 //  - Breakpoints arent importing properly with display property
 //  - Icons on the right are awkwardly spaced on md size
 //  - Opacity on background is messed up
@@ -28,7 +29,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export default function Navbar() {
   const [anchorEl, setanchorEl] = useState(null);
 
-  const pages = ['About', 'Skills', 'Portfolio', 'Contact'];
+  const pages = ['About', 'Skills', 'Projects', 'Contact'];
 
   const handleOpen = (event) => {
     setanchorEl(event.currentTarget);
@@ -41,7 +42,7 @@ export default function Navbar() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="sticky" elevation={3} sx={{ backgroundColor: 'background.default', opacity: '.89' }}>
+      <AppBar position="sticky" elevation={5} sx={{ backgroundColor: 'background.default', opacity: '.89' }}>
         <Container>
           <Toolbar disableGutters>
             <Box
@@ -62,7 +63,7 @@ export default function Navbar() {
               <Menu
                 id="menu-nav"
                 anchorEl={anchorEl}
-                elevation={4}
+                elevation={5}
                 anchorOrigin={{
                   vertical: 'bottom',
                   horizontal: 'left',
@@ -80,8 +81,8 @@ export default function Navbar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleClose} sx={{ backgroundColor: 'background.default', color: 'white.main', opacity: '.84' }}>
-                    <Typography textAlign="center" href={page}>- {page}</Typography>
+                  <MenuItem key={page} onClick={handleClose} href={page} sx={{ backgroundColor: 'background.default', color: 'white.main', opacity: '.84' }}>
+                    <Typography textAlign="center">- {page}</Typography>
                     <Divider />
                   </MenuItem>
                 ))}
