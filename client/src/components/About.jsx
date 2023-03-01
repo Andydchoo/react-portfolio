@@ -19,9 +19,8 @@ export default function About() {
             component="h1"
             variant="h2"
             align="center"
-            color="white.main"
-            fontWeight='500'
-            sx={{ opacity: "87%" }}
+            color="text.main"
+            fontWeight='600'
             gutterBottom
           >
             About me
@@ -33,8 +32,8 @@ export default function About() {
               alt="Andy Choo"
             />
           </Card>
-          <Typography variant="h6" align="center" color="white.main" sx={{ opacity: "60%" }} paragraph>
-            I'm Andy, a full-stack web developer, on a quest for constant growth and improvement through experience.
+          <Typography variant="h6" align="center" color="text.sub" paragraph>
+            I'm Andy, a full-stack web developer, striving for constant growth and improvement through experience.
             I have a passion for creation, and (think of word). My hobbies include wood working, and building custom keyboards!
           </Typography>
           <Stack

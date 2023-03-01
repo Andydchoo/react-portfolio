@@ -19,6 +19,8 @@ export const theme = createTheme({
   palette: {
     background: {
       default: '#121212',
+      variant: `rgba(18, 18, 18, .89)`,
+      variant2: `rgba(18, 18, 18, .34)`
     },
     primary: {
       main: '#BB86FC',
@@ -31,8 +33,9 @@ export const theme = createTheme({
     error: {
       main: '#CF6679',
     },
-    white: {
-      main: '#FFFFFF',
+    text: {
+      main: `rgba(255, 255, 255, .87)`,
+      sub: `rgba(255, 255, 255, .6)`,
     },
   },
 });

@@ -24,6 +24,7 @@ import { theme } from "../styles/styles";
 import MenuIcon from '@mui/icons-material/Menu';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import zIndex from '@mui/material/styles/zIndex';
 
 
 export default function Navbar() {
@@ -42,7 +43,7 @@ export default function Navbar() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="sticky" elevation={5} sx={{ backgroundColor: 'background.default', opacity: '.89' }}>
+      <AppBar position='sticky' elevation={5} sx={{ backgroundColor: 'background.variant' }}>
         <Container>
           <Toolbar disableGutters>
             <Box
@@ -56,9 +57,9 @@ export default function Navbar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpen}
-                color="white.main"
+                color="text.main"
               >
-                <MenuIcon sx={{ color: "white.main" }} />
+                <MenuIcon sx={{ color: "text.main" }} />
               </IconButton>
               <Menu
                 id="menu-nav"
@@ -78,10 +79,11 @@ export default function Navbar() {
                 TransitionComponent={Fade}
                 sx={{
                   display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' },
+                  background: 'none'
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleClose} href={page} sx={{ backgroundColor: 'background.default', color: 'white.main', opacity: '.84' }}>
+                  <MenuItem key={page} onClick={handleClose} href={page} sx={{ backgroundColor: 'background.default', color: 'text.main' }}>
                     <Typography textAlign="center">- {page}</Typography>
                     <Divider />
                   </MenuItem>
@@ -89,7 +91,7 @@ export default function Navbar() {
               </Menu>
             </Box>
             <Typography
-              variant="h5"
+              variant="h4"
               noWrap
               component="a"
               href="#about"
@@ -100,7 +102,7 @@ export default function Navbar() {
                 fontFamily: 'Open sans',
                 fontWeight: 700,
                 letterSpacing: '.1rem',
-                color: 'white.main',
+                color: 'text.main',
                 textDecoration: 'none',
               }}
             >
@@ -119,9 +121,10 @@ export default function Navbar() {
                   href={page}
                   sx={{
                     margin: 2,
-                    color: 'white.main',
+                    color: 'text.main',
                     display: 'block',
-                    fontFamily: 'Open sans'
+                    fontFamily: 'Open sans',
+                    fontWeight: '600'
                   }}
                 >
                   // {page}
@@ -138,7 +141,7 @@ export default function Navbar() {
                 href="https://github.com/Andydchoo"
                 target="_blank"
                 sx={{
-                  color: 'white.main'
+                  color: 'text.main'
                 }}
               >
                 <GitHubIcon />
@@ -147,7 +150,7 @@ export default function Navbar() {
                 href='https://www.linkedin.com/in/andychoo'
                 target='blank'
                 sx={{
-                  color: 'white.main'
+                  color: 'text.main'
                 }}
               >
                 <LinkedInIcon />
