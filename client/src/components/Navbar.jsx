@@ -1,6 +1,6 @@
 //  Plans
 
-//  - Make hover effect take up entire height of navbar
+//  - Make hover effect take up entire height of navbar for buttons
 //  - Fancy Animations would be nice
 
 
@@ -10,7 +10,7 @@
 //      -Typography begins to stop aligning left once large view begins.
 //      -Every item seems to stretch out until large view-width is reached.
 //      -Then it just constantly slides towards the middle, at the same width.
-//      -Seems to be an issue with *flexgrow* potentially?
+//      
 //  - Navigation links should work
 //      - Menu links dont work, but the navbar links do.
 //  - Breakpoints arent importing properly with display property
@@ -46,10 +46,12 @@ export default function Navbar() {
       <AppBar position='sticky' elevation={5} sx={{ backgroundColor: 'background.variant' }}>
         <Container>
           <Toolbar disableGutters>
+
+            {/* Menu */}
             <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none' }
+                flex: 1,
+                display: { xs: 'flex', md: 'none', lg: 'none', xl: 'none' }
               }}
             >
               <IconButton
@@ -78,7 +80,7 @@ export default function Navbar() {
                 onClose={handleClose}
                 TransitionComponent={Fade}
                 sx={{
-                  display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' },
+                  display: { xs: 'block', md: 'none', lg: 'none', xl: 'none' },
                   background: 'none'
                 }}
               >
@@ -90,35 +92,39 @@ export default function Navbar() {
                 ))}
               </Menu>
             </Box>
+
+            {/* Title text */}
             <Typography
               variant="h4"
               noWrap
               component="a"
               href="#about"
               sx={{
-                mr: 2,
-                display: 'flex',
-                flexGrow: 1,
+                display: { xs: 'none', sm: 'none', med: 'flex' },
+                flex: 1,
                 fontFamily: 'Open sans',
                 fontWeight: 700,
                 letterSpacing: '.1rem',
                 color: 'text.main',
                 textDecoration: 'none',
+                justifyContent: { sm: 'center', med: 'center' }
               }}
             >
               Andy Choo
             </Typography>
+
+            {/* Nav buttons for med-larger screens */}
             <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }
+                flex: 1,
+                display: { xs: 'none', sm: 'none', md: 'flex' }
               }}
             >
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleClose}
-                  href={page}
+                  href={'#' + page}
                   sx={{
                     margin: 2,
                     color: 'text.main',
@@ -127,15 +133,17 @@ export default function Navbar() {
                     fontWeight: '600'
                   }}
                 >
-                  // {page}
+                  //{page}
                 </Button>
               ))}
             </Box>
 
+            {/* Social's icons */}
             <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: 'none', sm: 'flex' },
+                flex: 1,
+                display: { xs: 'flex', sm: 'flex' },
+                justifyContent: 'flex-end'
               }}>
               <Button
                 href="https://github.com/Andydchoo"
@@ -148,7 +156,7 @@ export default function Navbar() {
               </Button>
               <Button
                 href='https://www.linkedin.com/in/andychoo'
-                target='blank'
+                target='_blank'
                 sx={{
                   color: 'text.main'
                 }}
