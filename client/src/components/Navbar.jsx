@@ -18,7 +18,20 @@
 //  - Opacity on background is messed up
 
 import { React, useState } from 'react';
-import { AppBar, IconButton, Toolbar, Box, Typography, Menu, Container, Button, MenuItem, Divider, Fade, CssBaseline } from '@mui/material';
+import {
+  AppBar,
+  IconButton,
+  Toolbar,
+  Box,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+  Divider,
+  Fade,
+  CssBaseline
+} from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from "../styles/styles";
 import MenuIcon from '@mui/icons-material/Menu';

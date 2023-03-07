@@ -18,8 +18,8 @@ export const theme = createTheme({
   palette: {
     background: {
       default: '#121212',
-      variant: `rgba(18, 18, 18, .89)`,
-      variant2: `rgba(18, 18, 18, .34)`
+      variant: `#292929`,
+      variant2: `#3b3b3b`
     },
     primary: {
       main: '#BB86FC',

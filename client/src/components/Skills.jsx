@@ -12,7 +12,7 @@ export default function Skills() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Card elevation={4} sx={{ margin: 3, backgroundColor: 'background.default', borderRadius: '10px' }}>
+      <Card elevation={4} sx={{ margin: 3, backgroundColor: 'background.variant', borderRadius: '7px' }}>
         <Box
           sx={{
             pt: 8,
@@ -43,9 +43,9 @@ export default function Skills() {
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: 'background.variant',
+                    backgroundColor: 'background.variant2',
                     alignItems: 'center',
-                    borderRadius: '10px'
+                    borderRadius: '7px'
                   }}
                   elevation={3}
                 >
@@ -113,9 +113,9 @@ export default function Skills() {
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    backgroundColor: 'background.variant',
+                    backgroundColor: 'background.variant2',
                     alignItems: 'center',
-                    borderRadius: '10px'
+                    borderRadius: '7px'
                   }}
                   elevation={3}
                 >
