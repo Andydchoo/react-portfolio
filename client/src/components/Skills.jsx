@@ -6,8 +6,10 @@ import { theme } from "../styles/styles";
 
 const cards = ['Front-End', 'Back-End'];
 
-// Plans
-//    -Try out text decorations. Looks clean but extremely boring right now.
+//  - Plans
+//    - Try out text decorations. Looks clean but extremely boring right now.
+//    - Make icons clickable/interactable
+
 export default function Skills() {
   return (
     <ThemeProvider theme={theme}>

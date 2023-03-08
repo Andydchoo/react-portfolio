@@ -1,8 +1,8 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import {
   TextField,
   Button,
-  Grid,
   Typography,
   CssBaseline,
   Box,
@@ -11,10 +11,11 @@ import {
   Container,
   Stack,
   InputAdornment,
-  InputLabel
 } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import Email from '@mui/icons-material/Email';
+import SubjectIcon from '@mui/icons-material/Subject';
+import CommentIcon from '@mui/icons-material/Comment';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from "../styles/styles";
 
@@ -22,27 +23,32 @@ import { theme } from "../styles/styles";
 //    - Fix up spacing
 //    - Color of text inside textboxes is too dark
 
+//  - Issues
+//    - Sm-med view has bug with footer
+
+
 export default function Contact() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  const [success, setSuccess] = useState();
 
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
+  const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+  const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+  const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+  const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email: ", email);
-    console.log("Message: ", message);
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+        console.log("Message sent");
+        setSuccess("Message Sent!");
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
   };
 
   return (
@@ -51,14 +57,33 @@ export default function Contact() {
       <Container
         sx={{
           display: { xs: 'block', sm: 'block', med: 'block', lg: 'flex', xl: 'flex' },
-          maxWidth: { xs: 'sm', sm: 'sm', med: 'sm', lg: 'lg', xl: 'xl' },
-          alignItems: 'center'
-        }}>
-        <Stack direction="column" sx={{ justifyContent: 'space-evenly', flex: "1" }}>
+          maxWidth: { xs: 'sm', sm: 'sm', med: 'sm', lg: 'xl', xl: 'xl' },
+          alignItems: 'center',
+          mb: 5,
+          height: '80vh'
+        }}
+      >
+        {/* Title/description */}
+        <Stack
+          direction="column"
+          sx={{
+            justifyContent: 'space-evenly',
+            flex: "1",
+            alignItems: 'center'
+          }}
+        >
           <Typography variant="h2" fontWeight="600" align="center" color='text.main' gutterBottom>
             Contact Me
           </Typography>
-          <Typography variant="h6" align="center" gutterBottom sx={{ color: 'text.sub' }}>
+          <Typography
+            variant="h6"
+            align="center"
+            gutterBottom
+            sx={{
+              color: 'text.sub',
+              maxWidth: 'sm'
+            }}
+          >
             Want to get in touch? Send me a message, and I'll get back to you as soon as I can!
           </Typography>
           <Link
@@ -68,24 +93,50 @@ export default function Contact() {
             rel="noreferrer"
             href={`mailto:andydchoo@gmail.com`}
             underline="hover"
-
           >
+
             {/* Icon is not aligned properly */}
             <Email />
             {'AndyDChoo@gmail.com'}
           </Link>
         </Stack>
-        <Card sx={{ backgroundColor: 'background.variant', flex: '1', pb: 1, borderRadius: '7px' }}>
-          <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Stack direction="column" sx={{ alignItems: 'center', justifyContent: 'center', width: '90%' }}>
+
+        {/* Contact Form Card */}
+        <Card
+          elevation={5}
+          sx={{
+            backgroundColor: 'background.variant',
+            flex: '1',
+            pb: 5,
+            pt: 5,
+            borderRadius: '7px'
+          }}
+        >
+          <Box
+            component="form"
+            ref={form}
+            onSubmit={handleSubmit}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <Stack
+              direction="column"
+              sx={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '90%',
+              }}
+            >
               <TextField
                 label="Name"
                 variant="outlined"
                 fullWidth
                 required
-                value={name}
-                onChange={handleNameChange}
+                name="user_name"
                 margin="normal"
+                sx={{ m: 3, input: { color: 'text.main' } }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start" sx={{ color: "text.sub" }}>
@@ -100,13 +151,29 @@ export default function Contact() {
                 variant="outlined"
                 fullWidth
                 required
-                value={email}
-                onChange={handleEmailChange}
+                name="user_email"
                 margin="normal"
+                sx={{ m: 3, input: { color: 'text.main' } }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start" sx={{ color: "text.sub" }}>
                       <Email />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                label="Subject"
+                variant="outlined"
+                fullWidth
+                required
+                name="subject"
+                margin="normal"
+                sx={{ m: 3, input: { color: 'text.main' } }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start" sx={{ color: "text.sub" }}>
+                      <SubjectIcon />
                     </InputAdornment>
                   ),
                 }}
@@ -117,18 +184,34 @@ export default function Contact() {
                 fullWidth
                 multiline
                 required
+                name="message"
                 rows={4}
-                value={message}
-                onChange={handleMessageChange}
+                sx={{ m: 3, input: { color: 'text.main' } }}
                 margin="normal"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start" sx={{ color: "text.sub" }}>
+                      <CommentIcon />
+                    </InputAdornment>
+                  ),
+                }}
               />
               <Button
                 variant="contained"
                 color="primary"
                 type="submit"
+                sx={{ m: 3, fontWeight: '600' }}
               >
                 Send Message
               </Button>
+              <Typography
+                variant="h6"
+                align="center"
+                gutterBottom
+                sx={{ color: 'text.sub', maxWidth: 'sm' }}
+              >
+                {success}
+              </Typography>
             </Stack>
           </Box>
         </Card>
@@ -136,37 +219,3 @@ export default function Contact() {
     </ThemeProvider >
   );
 }
-
-// export default function Contact() {
-//   return (
-//     <ThemeProvider theme={theme}>
-//       <CssBaseline />
-//       <Box component="form" sx={{ backgroundColor: 'background.variant', pt: '30' }}>
-//         <Typography variant="h4" color="text.main" gutterBottom>
-//           Contact Me
-//         </Typography>
-//         <Card sx={{ backgroundColor: 'background.variant' }}>
-//           <Grid container spacing={2}>
-//             <Grid item xs={12} sm={6}>
-//               <TextField label="First Name" variant="outlined" fullWidth />
-//             </Grid>
-//             <Grid item xs={12} sm={6}>
-//               <TextField label="Last Name" variant="outlined" fullWidth />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField label="Email" variant="outlined" fullWidth />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <TextField label="Message" variant="outlined" multiline rows={4} fullWidth />
-//             </Grid>
-//             <Grid item xs={12}>
-//               <Button variant="contained" color="primary">
-//                 Submit
-//               </Button>
-//             </Grid>
-//           </Grid>
-//         </Card>
-//       </Box>
-//     </ThemeProvider>
-//   );
-// };

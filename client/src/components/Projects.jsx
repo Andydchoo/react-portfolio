@@ -11,77 +11,88 @@ export default function Projects() {
         sx={{
           pt: 8,
           pb: 6,
-          maxWidth: 'med'
+          maxWidth: 'med',
         }}>
-        <Container>
-          <Typography
-            component="h1"
-            variant="h2"
-            fontWeight='600'
-            align="center"
-            color="text.main"
-            gutterBottom
+
+        <Typography
+          component="h1"
+          variant="h2"
+          fontWeight='600'
+          align="center"
+          color="text.main"
+          gutterBottom
+        >
+          Projects
+        </Typography>
+        <Stack
+          sx={{ p: 1 }}
+          direction="row"
+          justifyContent="space-evenly"
+        >
+          {/* Projects cards */}
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: 'none',
+              flexGrow: 1,
+              maxWidth: '480px',
+              maxHeight: '270px',
+            }}
           >
-            Projects
-          </Typography>
-          <Grid item>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              justifyContent="space-evenly"
-            >
-              {/* Projects cards */}
-              <Card
-                sx={{ display: 'flex', flexDirection: 'column', background: 'none', flexGrow: 1, maxWidth: '480px', maxHeight: '270px', }}
-              >
-                <CardMedia
-                  sx={{}}
-                  component="img"
-                  image="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/06/Portfolio-site-of-Kenneth-Jimmy-a-software-developer.png"
-                  alt="javascript"
-                />
-              </Card>
-              <Card
-                sx={{ display: 'flex', flexDirection: 'column', background: 'none', flexGrow: 1, maxWidth: '480px', maxHeight: '270px', }}
-              >
-                <CardMedia
-                  sx={{}}
-                  component="img"
-                  image="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/06/Portfolio-site-of-Kenneth-Jimmy-a-software-developer.png"
-                  alt="javascript"
-                />
-              </Card>
-            </Stack>
-          </Grid>
-          {/* Second row of project Cards */}
-          <Grid item>
-            <Stack
-              direction="row"
-              justifyContent="space-evenly"
-            >
-              <Card
-                sx={{ display: 'flex', flexDirection: 'column', background: 'none', flexGrow: 1, maxWidth: '480px', maxHeight: '270px', }}
-              >
-                <CardMedia
-                  sx={{}}
-                  component="img"
-                  image="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/06/Portfolio-site-of-Kenneth-Jimmy-a-software-developer.png"
-                  alt="javascript"
-                />
-              </Card>
-              <Card
-                sx={{ display: 'flex', flexDirection: 'column', background: 'none', flexGrow: 1, maxWidth: '480px', maxHeight: '270px', }}
-              >
-                <CardMedia
-                  sx={{}}
-                  component="img"
-                  image="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/06/Portfolio-site-of-Kenneth-Jimmy-a-software-developer.png"
-                  alt="javascript"
-                />
-              </Card>
-            </Stack>
-          </Grid>
-        </Container>
+            <CardMedia
+              component="img"
+              image="https://images.unsplash.com/photo-1603486002664-a7319421e133?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8MTYlM0E5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="javascript"
+            />
+          </Card>
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: 'none',
+              flexGrow: 1,
+              maxWidth: '480px',
+              maxHeight: '270px',
+            }}
+          >
+            <CardMedia
+              sx={{}}
+              component="img"
+              image="https://images.unsplash.com/photo-1603486002664-a7319421e133?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8MTYlM0E5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="javascript"
+            />
+          </Card>
+        </Stack>
+
+        {/* Second row of project Cards */}
+        <Stack
+          direction="row"
+          justifyContent="space-evenly"
+          sx={{ p: 1 }}
+        >
+          <Card
+            sx={{ display: 'flex', flexDirection: 'column', background: 'none', flexGrow: 1, maxWidth: '480px', maxHeight: '270px', }}
+          >
+            <CardMedia
+              sx={{}}
+              component="img"
+              image="https://images.unsplash.com/photo-1603486002664-a7319421e133?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8MTYlM0E5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="javascript"
+            />
+          </Card>
+          <Card
+            sx={{ display: 'flex', flexDirection: 'column', background: 'none', flexGrow: 1, maxWidth: '480px', maxHeight: '270px', }}
+          >
+            <CardMedia
+              sx={{}}
+              component="img"
+              image="https://images.unsplash.com/photo-1603486002664-a7319421e133?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8MTYlM0E5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="javascript"
+            />
+          </Card>
+        </Stack>
+
       </Box>
     </ThemeProvider>
   )
