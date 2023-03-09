@@ -17,7 +17,7 @@
 //  - Icons on the right are awkwardly spaced on md size
 //  - Opacity on background is messed up
 
-import { React, useState } from 'react';
+import { React, useState, useRef } from 'react';
 import {
   AppBar,
   IconButton,
@@ -34,6 +34,7 @@ import {
 } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from "../styles/styles";
+import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -45,12 +46,16 @@ export default function Navbar() {
 
   const pages = ['About', 'Skills', 'Projects', 'Contact'];
 
-  const handleOpen = (event) => {
-    setanchorEl(event.currentTarget);
+  const handleOpen = (e) => {
+    setanchorEl(e.currentTarget);
   };
 
   const handleClose = () => {
     setanchorEl(null);
+  };
+
+  const handleClick = (e) => {
+    setanchorEl(e.currentTarget);
   };
 
   return (
@@ -71,7 +76,7 @@ export default function Navbar() {
                 size="large"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleOpen}
+                onClick={handleClick}
                 color="text.main"
               >
                 <MenuIcon sx={{ color: "text.main" }} />
@@ -111,7 +116,7 @@ export default function Navbar() {
               variant="h4"
               noWrap
               component="a"
-              href="#about"
+              href="/"
               sx={{
                 display: { xs: 'none', sm: 'none', med: 'flex' },
                 flex: 1,
@@ -136,7 +141,6 @@ export default function Navbar() {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  onClick={handleClose}
                   href={'#' + page}
                   sx={{
                     margin: 2,
@@ -181,6 +185,6 @@ export default function Navbar() {
           </Toolbar>
         </Container>
       </AppBar>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }

@@ -11,6 +11,7 @@ export default function About() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
+        id="About"
         sx={{
           pt: 3,
           pb: 6,

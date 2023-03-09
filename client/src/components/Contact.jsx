@@ -55,12 +55,12 @@ export default function Contact() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container
+        id="Contact"
         sx={{
           display: { xs: 'block', sm: 'block', med: 'block', lg: 'flex', xl: 'flex' },
           maxWidth: { xs: 'sm', sm: 'sm', med: 'sm', lg: 'xl', xl: 'xl' },
           alignItems: 'center',
           mb: 5,
-          height: '80vh'
         }}
       >
         {/* Title/description */}
@@ -93,6 +93,7 @@ export default function Contact() {
             rel="noreferrer"
             href={`mailto:andydchoo@gmail.com`}
             underline="hover"
+            gutterBottom
           >
 
             {/* Icon is not aligned properly */}

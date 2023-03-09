@@ -17,6 +17,7 @@ export default function Skills() {
       <CssBaseline />
       <Card elevation={4} sx={{ margin: 3, backgroundColor: 'background.variant', borderRadius: '7px' }}>
         <Box
+          id="Skills"
           sx={{
             pt: 8,
             pb: 6,

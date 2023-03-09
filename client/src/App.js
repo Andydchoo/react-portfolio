@@ -10,16 +10,24 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
+
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App" >
-        <Navbar />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
+      <div className="App" style={{ scrollBehavior: 'smooth' }}>
+        <Navbar id='Navbar' />
+        <About id='About' />
+        <Skills id='Skills' />
+        <Projects id='Projects' />
+        <Contact id='Contact' />
+        <Footer id='Footer' />
       </div>
     </ThemeProvider>
   );
