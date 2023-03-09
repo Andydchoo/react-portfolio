@@ -21,7 +21,7 @@ export default function About() {
           sx={{
             display: { xs: 'block', sm: 'block', med: 'block', lg: 'flex', xl: 'flex' },
             maxWidth: { xs: 'sm', sm: 'sm', med: 'sm', lg: 'xl' },
-            alignItems: 'center'
+            alignItems: 'center',
           }}>
           <Typography
             component="h1"

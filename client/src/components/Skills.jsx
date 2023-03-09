@@ -9,6 +9,7 @@ const cards = ['Front-End', 'Back-End'];
 //  - Plans
 //    - Try out text decorations. Looks clean but extremely boring right now.
 //    - Make icons clickable/interactable
+//    - Make reusable styles
 
 export default function Skills() {
   return (
@@ -53,7 +54,7 @@ export default function Skills() {
                 >
 
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h4" component="h2" color='text.sub'>
+                    <Typography gutterBottom variant="h4" component="h2" color='text.main'>
                       Front-end
                     </Typography>
                   </CardContent>
@@ -85,7 +86,7 @@ export default function Skills() {
                     <Stack
                       direction="column"
                       justifyContent="space-evenly"
-                      sx={{ height: '100%' }}
+                      sx={{ height: '100%', pb: 1 }}
                     >
                       <CardMedia
                         sx={{ maxWidth: '250px', maxHeight: '55px', minHeight: '40px', minWidth: '150px' }}
@@ -100,7 +101,7 @@ export default function Skills() {
                         alt="bootstrap"
                       />
                       <CardMedia
-                        sx={{ maxWidth: '250px', maxHeight: '55px', minHeight: '40px', minWidth: '150px' }}
+                        sx={{ maxWidth: '250px', maxHeight: '55px', minHeight: '40px', minWidth: '150px', borderBottomLeftRadius: '5px', borderBottomRightRadius: '5px' }}
                         component="img"
                         image="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white"
                         alt="mui"
@@ -122,7 +123,7 @@ export default function Skills() {
                   elevation={3}
                 >
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h4" component="h2" color='text.sub'>
+                    <Typography gutterBottom variant="h4" component="h2" color='text.main'>
                       Back-end
                     </Typography>
                   </CardContent>
@@ -154,7 +155,7 @@ export default function Skills() {
                     <Stack
                       direction="column"
                       justifyContent="space-evenly"
-                      sx={{ height: '100%' }}
+                      sx={{ height: '100%', pb: 1 }}
                     >
                       <CardMedia
                         sx={{ maxWidth: '250px', maxHeight: '55px', minHeight: '40px', minWidth: '150px' }}
@@ -163,7 +164,7 @@ export default function Skills() {
                         alt="mysql"
                       />
                       <CardMedia
-                        sx={{ maxWidth: '250px', maxHeight: '55px', minHeight: '40px', minWidth: '150px' }}
+                        sx={{ maxWidth: '250px', maxHeight: '55px', minHeight: '40px', minWidth: '150px', borderBottomLeftRadius: '5px', borderBottomRightRadius: '5px' }}
                         component="img"
                         image="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=whitee"
                         alt="heroku"
