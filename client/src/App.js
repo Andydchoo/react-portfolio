@@ -11,17 +11,10 @@ import Footer from './components/Footer';
 
 export default function App() {
 
-  const scrollToSection = (elementRef) => {
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior: 'smooth'
-    });
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App" style={{ scrollBehavior: 'smooth' }}>
+      <div className="App" style={{ scrollBehavior: 'smooth', scrollSnapType: 'y proximity', overflowY: 'scroll' }}>
         <Navbar id='Navbar' />
         <About id='About' />
         <Skills id='Skills' />
