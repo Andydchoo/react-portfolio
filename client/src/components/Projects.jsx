@@ -8,14 +8,14 @@ const projects = [
     title: 'CryptoWatch',
     description: 'Search and view stats, charts, and news on crypto currencies.',
     imageUrl: 'assets/cryptowatch.png',
-    demoUrl: 'https://example.com/demo',
+    demoUrl: 'https://copernichris.github.io/CryptoWatch/',
     sourceUrl: 'https://github.com/Copernichris/CryptoWatch',
   },
   {
     title: 'RGMarket',
     description: 'A marketplace for buying and selling retro video games.',
     imageUrl: 'assets/rgmarket.png',
-    demoUrl: 'https://example.com/demo',
+    demoUrl: 'https://nutty-knickers-bee.cyclic.app/',
     sourceUrl: 'https://github.com/Andydchoo/Retro-Game-Market',
   },
   {
