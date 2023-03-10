@@ -70,8 +70,8 @@ export default function About() {
           spacing={3}
           justifyContent="center"
         >
-          <Button variant="contained" href="#projects">My Projects</Button>
-          <Button variant="outlined" href="#contact">Contact me</Button>
+          <Button variant="contained" href="#Projects">My Projects</Button>
+          <Button variant="outlined" href="#Contact">Contact me</Button>
         </Stack>
 
       </Box>
