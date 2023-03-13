@@ -29,7 +29,7 @@ const projects = [
     title: 'Mern Todolist',
     description: 'A simple todo list app built using the mern stack.',
     imageUrl: 'assets/merntodo.png',
-    demoUrl: 'https://example.com/demo',
+    demoUrl: 'https://mern-todo-front.onrender.com/',
     sourceUrl: 'https://github.com/Andydchoo/Mern-todo',
   },
 ];
