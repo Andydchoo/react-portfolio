@@ -22,7 +22,7 @@ const projects = [
     title: 'VodU',
     description: 'Upload, view, and comment on clips from video games.',
     imageUrl: 'assets/vodu.png',
-    demoUrl: 'https://example.com/demo',
+    demoUrl: 'https://vod-u-front.onrender.com/',
     sourceUrl: 'https://github.com/Copernichris/Vodu',
   },
   {
