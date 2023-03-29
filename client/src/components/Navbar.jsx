@@ -3,21 +3,20 @@
 //  - Make hover effect take up entire height of navbar for buttons
 //  - Fancy Animations would be nice
 
-
 //  Issues
 
 //  - Lines 92-109.
 //      -Typography begins to stop aligning left once large view begins.
 //      -Every item seems to stretch out until large view-width is reached.
 //      -Then it just constantly slides towards the middle, at the same width.
-//      
+//
 //  - Navigation links should work
 //      - Menu links dont work, but the navbar links do.
 //  - Breakpoints arent importing properly with display property
 //  - Icons on the right are awkwardly spaced on md size
 //  - Opacity on background is messed up
 
-import { React, useState, useRef } from 'react';
+import { React, useState, useRef } from "react";
 import {
   AppBar,
   IconButton,
@@ -30,21 +29,20 @@ import {
   MenuItem,
   Divider,
   Fade,
-  CssBaseline
-} from '@mui/material';
-import { ThemeProvider } from '@emotion/react';
+  CssBaseline,
+} from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
 import { theme } from "../styles/styles";
 import { Link } from "react-router-dom";
-import MenuIcon from '@mui/icons-material/Menu';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import zIndex from '@mui/material/styles/zIndex';
-
+import MenuIcon from "@mui/icons-material/Menu";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import zIndex from "@mui/material/styles/zIndex";
 
 export default function Navbar() {
   const [anchorEl, setanchorEl] = useState(null);
 
-  const pages = ['About', 'Skills', 'Projects', 'Contact'];
+  const pages = ["About", "Skills", "Projects", "Contact"];
 
   const handleOpen = (e) => {
     setanchorEl(e.currentTarget);
@@ -61,15 +59,18 @@ export default function Navbar() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position='sticky' elevation={5} sx={{ backgroundColor: 'background.variant' }}>
-        <Container>
+      <AppBar
+        position="fixed"
+        elevation={5}
+        sx={{ backgroundColor: "background.variant" }}
+      >
+        <Box padding="0px 25px">
           <Toolbar disableGutters>
-
             {/* Menu */}
             <Box
               sx={{
                 flex: 1,
-                display: { xs: 'flex', md: 'none', lg: 'none', xl: 'none' }
+                display: { xs: "flex", md: "none", lg: "none", xl: "none" },
               }}
             >
               <IconButton
@@ -86,26 +87,34 @@ export default function Navbar() {
                 anchorEl={anchorEl}
                 elevation={5}
                 anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
+                  vertical: "bottom",
+                  horizontal: "left",
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
+                  vertical: "top",
+                  horizontal: "left",
                 }}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
                 TransitionComponent={Fade}
                 sx={{
-                  display: { xs: 'block', md: 'none', lg: 'none', xl: 'none' },
-                  background: 'none'
+                  display: { xs: "block", md: "none", lg: "none", xl: "none" },
+                  backgroundColor: "none",
+                  "& .MuiPaper-root": {
+                    backgroundColor: "rgb(18, 18, 18)",
+                  },
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleClose} href={page} sx={{ backgroundColor: 'background.default', color: 'text.main' }}>
-                    <Typography textAlign="center">- {page}</Typography>
-                    <Divider />
+                  <MenuItem key={page} onClick={handleClose}>
+                    <Button
+                      href={"#" + page}
+                      textAlign="center"
+                      sx={{ color: "text.main" }}
+                    >
+                      - {page}
+                    </Button>
                   </MenuItem>
                 ))}
               </Menu>
@@ -118,14 +127,14 @@ export default function Navbar() {
               component="a"
               href="/"
               sx={{
-                display: { xs: 'none', sm: 'none', med: 'flex' },
+                display: { xs: "none", sm: "none", med: "flex" },
                 flex: 1,
-                fontFamily: 'Open sans',
+                fontFamily: "Open sans",
                 fontWeight: 700,
-                letterSpacing: '.1rem',
-                color: 'text.main',
-                textDecoration: 'none',
-                justifyContent: { sm: 'center', med: 'center' }
+                letterSpacing: ".1rem",
+                color: "text.main",
+                textDecoration: "none",
+                justifyContent: { sm: "center", med: "center", lg: "start" },
               }}
             >
               Andy Choo
@@ -135,19 +144,19 @@ export default function Navbar() {
             <Box
               sx={{
                 flex: 1,
-                display: { xs: 'none', sm: 'none', md: 'flex' }
+                display: { xs: "none", sm: "none", md: "flex" },
               }}
             >
               {pages.map((page) => (
                 <Button
                   key={page}
-                  href={'#' + page}
+                  href={"#" + page}
                   sx={{
                     margin: 2,
-                    color: 'text.main',
-                    display: 'block',
-                    fontFamily: 'Open sans',
-                    fontWeight: '600'
+                    color: "text.main",
+                    display: "block",
+                    fontFamily: "Open sans",
+                    fontWeight: "600",
                   }}
                 >
                   //{page}
@@ -159,32 +168,32 @@ export default function Navbar() {
             <Box
               sx={{
                 flex: 1,
-                display: { xs: 'flex', sm: 'flex' },
-                justifyContent: 'flex-end'
-              }}>
+                display: { xs: "flex", sm: "flex" },
+                justifyContent: "flex-end",
+              }}
+            >
               <Button
                 href="https://github.com/Andydchoo"
                 target="_blank"
                 sx={{
-                  color: 'text.main'
+                  color: "text.main",
                 }}
               >
                 <GitHubIcon />
               </Button>
               <Button
-                href='https://www.linkedin.com/in/andychoo'
-                target='_blank'
+                href="https://www.linkedin.com/in/andychoo"
+                target="_blank"
                 sx={{
-                  color: 'text.main'
+                  color: "text.main",
                 }}
               >
                 <LinkedInIcon />
               </Button>
             </Box>
-
           </Toolbar>
-        </Container>
+        </Box>
       </AppBar>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }

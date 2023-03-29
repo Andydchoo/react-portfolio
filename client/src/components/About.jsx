@@ -1,6 +1,15 @@
-import * as React from 'react';
-import { Button, CssBaseline, Stack, Box, Typography, Container, Card, CardMedia } from '@mui/material';
-import { ThemeProvider } from '@emotion/react';
+import * as React from "react";
+import {
+  Button,
+  CssBaseline,
+  Stack,
+  Box,
+  Typography,
+  Container,
+  Card,
+  CardMedia,
+} from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
 import { theme } from "../styles/styles";
 
 //  Todo
@@ -15,27 +24,35 @@ export default function About() {
         sx={{
           pt: 3,
           pb: 6,
-          alignItems: 'center'
+          mt: "68.5px",
+          alignItems: "center",
         }}
       >
         <Container
           sx={{
-            display: { xs: 'block', sm: 'block', med: 'block', lg: 'flex', xl: 'flex' },
-            maxWidth: { xs: 'sm', sm: 'sm', med: 'sm', lg: 'xl' },
-            alignItems: 'center',
-          }}>
+            display: {
+              xs: "block",
+              sm: "block",
+              med: "block",
+              lg: "flex",
+              xl: "flex",
+            },
+            maxWidth: { xs: "sm", sm: "sm", med: "sm", lg: "xl" },
+            alignItems: "center",
+          }}
+        >
           <Typography
             component="h1"
             variant="h2"
             align="center"
             color="text.main"
-            fontWeight='600'
+            fontWeight="600"
             gutterBottom
-            sx={{ display: { med: 'block', lg: 'none' } }}
+            sx={{ display: { med: "block", lg: "none" } }}
           >
             About me
           </Typography>
-          <Card variant="outlined" sx={{ mb: 4, flex: '1' }}>
+          <Card variant="outlined" sx={{ mb: 4, flex: "1" }}>
             <CardMedia
               component="img"
               src="../../assets/headshot.png"
@@ -43,23 +60,29 @@ export default function About() {
             />
           </Card>
 
-          <Stack direction="column" sx={{ justifyContent: 'space-evenly', flex: "1" }}>
+          <Stack
+            direction="column"
+            sx={{ justifyContent: "space-evenly", flex: "1", m: "20px" }}
+          >
             <Typography
               component="h1"
               variant="h2"
               align="center"
               color="text.main"
-              fontWeight='600'
+              fontWeight="600"
               gutterBottom
-              sx={{ display: { xs: 'none', sm: 'none', med: 'none', lg: 'block' } }}
+              sx={{
+                display: { xs: "none", sm: "none", med: "none", lg: "block" },
+              }}
             >
               About me
             </Typography>
             <Typography variant="h6" align="center" color="text.sub" paragraph>
-              I'm Andy, a proficient full-stack web developer, dedicated to pursuing
-              constant refinement of my skills through experience. My passion lies in
-              the act of creation and fostering creativity. In my free time I love to
-              build with woodworking and design with my custom keyboards.
+              I'm Andy, a proficient full-stack web developer, dedicated to
+              pursuing constant refinement of my skills through experience. My
+              passion lies in the act of creation and fostering creativity. In
+              my free time I love to build with woodworking, and customize my
+              keyboards.
             </Typography>
           </Stack>
         </Container>
@@ -70,11 +93,14 @@ export default function About() {
           spacing={3}
           justifyContent="center"
         >
-          <Button variant="contained" href="#Projects">My Projects</Button>
-          <Button variant="outlined" href="#Contact">Contact me</Button>
+          <Button variant="contained" href="#Projects">
+            My Projects
+          </Button>
+          <Button variant="outlined" href="#Contact">
+            Contact me
+          </Button>
         </Stack>
-
       </Box>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }
