@@ -167,8 +167,6 @@ export default function Skills() {
                           maxHeight: "55px",
                           minHeight: "40px",
                           minWidth: "150px",
-                          borderBottomLeftRadius: "5px",
-                          borderBottomRightRadius: "5px",
                         }}
                         component="img"
                         image="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white"
@@ -252,6 +250,8 @@ export default function Skills() {
                           maxHeight: "55px",
                           minHeight: "40px",
                           minWidth: "150px",
+                          borderBottomLeftRadius: "5px",
+                          borderBottomRightRadius: "5px",
                         }}
                         component="img"
                         image="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge"
@@ -280,8 +280,6 @@ export default function Skills() {
                           maxHeight: "55px",
                           minHeight: "40px",
                           minWidth: "150px",
-                          borderBottomLeftRadius: "5px",
-                          borderBottomRightRadius: "5px",
                         }}
                         component="img"
                         image="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"
