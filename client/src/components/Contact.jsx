@@ -1,5 +1,5 @@
 import { React, useState, useRef } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import {
   TextField,
   Button,
@@ -12,11 +12,11 @@ import {
   Stack,
   InputAdornment,
 } from "@mui/material";
-import PersonIcon from '@mui/icons-material/Person';
-import Email from '@mui/icons-material/Email';
-import SubjectIcon from '@mui/icons-material/Subject';
-import CommentIcon from '@mui/icons-material/Comment';
-import { ThemeProvider } from '@emotion/react';
+import PersonIcon from "@mui/icons-material/Person";
+import Email from "@mui/icons-material/Email";
+import SubjectIcon from "@mui/icons-material/Subject";
+import CommentIcon from "@mui/icons-material/Comment";
+import { ThemeProvider } from "@emotion/react";
 import { theme } from "../styles/styles";
 
 // - Todo
@@ -26,9 +26,7 @@ import { theme } from "../styles/styles";
 //  - Issues
 //    - Sm-med view has bug with footer
 
-
 export default function Contact() {
-
   const [success, setSuccess] = useState();
 
   const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
@@ -40,14 +38,16 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-      .then((result) => {
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
+      (result) => {
         console.log(result.text);
         console.log("Message sent");
         setSuccess("Message Sent!");
-      }, (error) => {
+      },
+      (error) => {
         console.log(error.text);
-      });
+      }
+    );
     e.target.reset();
   };
 
@@ -57,9 +57,15 @@ export default function Contact() {
       <Container
         id="Contact"
         sx={{
-          display: { xs: 'block', sm: 'block', med: 'block', lg: 'flex', xl: 'flex' },
-          maxWidth: { xs: 'sm', sm: 'sm', med: 'sm', lg: 'xl', xl: 'xl' },
-          alignItems: 'center',
+          display: {
+            xs: "block",
+            sm: "block",
+            med: "block",
+            lg: "flex",
+            xl: "flex",
+          },
+          maxWidth: { xs: "sm", sm: "sm", med: "sm", lg: "xl", xl: "xl" },
+          alignItems: "center",
           mb: 5,
         }}
       >
@@ -67,12 +73,18 @@ export default function Contact() {
         <Stack
           direction="column"
           sx={{
-            justifyContent: 'space-evenly',
+            justifyContent: "space-evenly",
             flex: "1",
-            alignItems: 'center'
+            alignItems: "center",
           }}
         >
-          <Typography variant="h2" fontWeight="600" align="center" color='text.main' gutterBottom>
+          <Typography
+            variant="h2"
+            fontWeight="600"
+            align="center"
+            color="text.main"
+            gutterBottom
+          >
             Contact Me
           </Typography>
           <Typography
@@ -80,11 +92,12 @@ export default function Contact() {
             align="center"
             gutterBottom
             sx={{
-              color: 'text.sub',
-              maxWidth: 'sm'
+              color: "text.sub",
+              maxWidth: "sm",
             }}
           >
-            Want to get in touch? Send me a message, and I'll get back to you as soon as I can!
+            Want to get in touch? Send me a message, and I'll get back to you as
+            soon as I can!
           </Typography>
           <Link
             variant="h6"
@@ -95,10 +108,9 @@ export default function Contact() {
             underline="hover"
             gutterBottom
           >
-
             {/* Icon is not aligned properly */}
             <Email />
-            {'AndyDChoo@gmail.com'}
+            {"AndyDChoo@gmail.com"}
           </Link>
         </Stack>
 
@@ -106,11 +118,11 @@ export default function Contact() {
         <Card
           elevation={5}
           sx={{
-            backgroundColor: 'background.variant',
-            flex: '1',
+            backgroundColor: "background.variant",
+            flex: "1",
             pb: 5,
             pt: 5,
-            borderRadius: '7px'
+            borderRadius: "7px",
           }}
         >
           <Box
@@ -118,16 +130,16 @@ export default function Contact() {
             ref={form}
             onSubmit={handleSubmit}
             sx={{
-              display: 'flex',
-              justifyContent: 'center'
+              display: "flex",
+              justifyContent: "center",
             }}
           >
             <Stack
               direction="column"
               sx={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '90%',
+                alignItems: "center",
+                justifyContent: "center",
+                width: "90%",
               }}
             >
               <TextField
@@ -137,7 +149,16 @@ export default function Contact() {
                 required
                 name="user_name"
                 margin="normal"
-                sx={{ m: 3, input: { color: 'text.main' } }}
+                sx={{
+                  m: 3,
+                  input: { color: "text.main" },
+                  "& label": { color: "text.main" },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "text.main",
+                    },
+                  },
+                }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start" sx={{ color: "text.sub" }}>
@@ -154,7 +175,16 @@ export default function Contact() {
                 required
                 name="user_email"
                 margin="normal"
-                sx={{ m: 3, input: { color: 'text.main' } }}
+                sx={{
+                  m: 3,
+                  input: { color: "text.main" },
+                  "& label": { color: "text.main" },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "text.main",
+                    },
+                  },
+                }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start" sx={{ color: "text.sub" }}>
@@ -170,7 +200,16 @@ export default function Contact() {
                 required
                 name="subject"
                 margin="normal"
-                sx={{ m: 3, input: { color: 'text.main' } }}
+                sx={{
+                  m: 3,
+                  input: { color: "text.main" },
+                  "& label": { color: "text.main" },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "text.main",
+                    },
+                  },
+                }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start" sx={{ color: "text.sub" }}>
@@ -187,7 +226,16 @@ export default function Contact() {
                 required
                 name="message"
                 rows={4}
-                sx={{ m: 3, input: { color: 'text.main' } }}
+                inputProps={{ style: { color: "white" } }}
+                sx={{
+                  m: 3,
+                  "& label": { color: "text.main" },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "text.main",
+                    },
+                  },
+                }}
                 margin="normal"
                 InputProps={{
                   startAdornment: (
@@ -201,7 +249,7 @@ export default function Contact() {
                 variant="contained"
                 color="primary"
                 type="submit"
-                sx={{ m: 3, fontWeight: '600' }}
+                sx={{ m: 3, fontWeight: "600" }}
               >
                 Send Message
               </Button>
@@ -209,7 +257,7 @@ export default function Contact() {
                 variant="h6"
                 align="center"
                 gutterBottom
-                sx={{ color: 'text.sub', maxWidth: 'sm' }}
+                sx={{ color: "text.sub", maxWidth: "sm" }}
               >
                 {success}
               </Typography>
@@ -217,6 +265,6 @@ export default function Contact() {
           </Box>
         </Card>
       </Container>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }
