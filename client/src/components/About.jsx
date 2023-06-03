@@ -81,8 +81,8 @@ export default function About() {
               I'm Andy, a proficient full-stack web developer, dedicated to
               pursuing constant refinement of my skills through experience. My
               passion lies in the act of creation and fostering creativity. In
-              my free time I love to build with woodworking, and customize my
-              keyboards.
+              my free time I love to build custom keyboards, and wake up for
+              early morning jogs.
             </Typography>
           </Stack>
         </Container>

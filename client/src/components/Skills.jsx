@@ -257,6 +257,19 @@ export default function Skills() {
                         image="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge"
                         alt="express"
                       />
+                      <CardMedia
+                        sx={{
+                          maxWidth: "250px",
+                          maxHeight: "55px",
+                          minHeight: "40px",
+                          minWidth: "150px",
+                          borderBottomLeftRadius: "5px",
+                          borderBottomRightRadius: "5px",
+                        }}
+                        component="img"
+                        image="https://img.shields.io/badge/Sanity-ff5c5c?style=for-the-badge&logo=sanity&logoColor=white"
+                        alt="sanity"
+                      />
                     </Stack>
                     <Stack
                       direction="column"

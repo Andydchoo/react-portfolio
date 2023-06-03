@@ -16,6 +16,13 @@ import { theme } from "../styles/styles";
 
 const projects = [
   {
+    title: "SankyuStudio",
+    description: "A fully functional Ecommerce website built from scratch.",
+    imageUrl: "assets/sankyu.png",
+    demoUrl: "https://sankyustudio.onrender.com/",
+    sourceUrl: "https://github.com/Andydchoo/sankyu-studio",
+  },
+  {
     title: "RGMarket",
     description: "A marketplace for buying and selling retro video games.",
     imageUrl: "assets/rgmarket.png",
@@ -35,14 +42,6 @@ const projects = [
     imageUrl: "assets/merntodo.png",
     demoUrl: "https://mern-todo-front.onrender.com/",
     sourceUrl: "https://github.com/Andydchoo/Mern-todo",
-  },
-  {
-    title: "CryptoWatch",
-    description:
-      "Search and view stats, charts, and news on crypto currencies.",
-    imageUrl: "assets/cryptowatch.png",
-    demoUrl: "https://copernichris.github.io/CryptoWatch/",
-    sourceUrl: "https://github.com/Copernichris/CryptoWatch",
   },
 ];
 
