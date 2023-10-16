@@ -19,8 +19,8 @@ const projects = [
     title: "SankyuStudio",
     description: "A fully functional Ecommerce website built from scratch.",
     imageUrl: "assets/sankyu.png",
-    demoUrl: "https://sankyustudio.onrender.com/",
-    sourceUrl: "https://github.com/Andydchoo/sankyu-studio",
+    demoUrl: "https://sankyustudio.vercel.app/",
+    sourceUrl: "https://github.com/Andydchoo/sankyu-next",
   },
   {
     title: "RGMarket",
