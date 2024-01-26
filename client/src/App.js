@@ -13,21 +13,12 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div
-        className="App"
-        style={{
-          scrollBehavior: "smooth",
-          scrollSnapType: "y proximity",
-          overflowY: "scroll",
-        }}
-      >
-        <Navbar id="Navbar" />
-        <About id="About" />
-        <Skills id="Skills" />
-        <Projects id="Projects" />
-        <Contact id="Contact" />
-        <Footer id="Footer" />
-      </div>
+      <Navbar id="Navbar" />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -1,8 +1,6 @@
 import * as React from "react";
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   CssBaseline,
@@ -15,17 +13,23 @@ import {
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../styles/styles";
 
-const cards = ["Front-End", "Back-End"];
-
-//  - Plans
-//    - Try out text decorations. Looks clean but extremely boring right now.
-//    - Make icons clickable/interactable
-//    - Make reusable styles
-
 export default function Skills() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <a
+        className="anchor"
+        id="Skills"
+        href="/#"
+        style={{
+          display: "block",
+          position: "relative",
+          top: "-68px",
+          visibility: "hidden",
+        }}
+      >
+        a
+      </a>
       <Card
         elevation={4}
         sx={{
@@ -35,7 +39,6 @@ export default function Skills() {
         }}
       >
         <Box
-          id="Skills"
           sx={{
             pt: 8,
             pb: 6,
@@ -51,7 +54,7 @@ export default function Skills() {
               color="text.main"
               gutterBottom
             >
-              My Skills
+              Technical Skills
             </Typography>
             <Stack sx={{ pt: 4 }} direction="row" justifyContent="space-evenly">
               {/* Front-end card */}

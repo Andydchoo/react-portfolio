@@ -54,8 +54,21 @@ export default function Contact() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container
+      <a
+        className="anchor"
         id="Contact"
+        alt="anchor"
+        href="/#"
+        style={{
+          display: "block",
+          position: "relative",
+          top: "-68px",
+          visibility: "hidden",
+        }}
+      >
+        a
+      </a>
+      <Container
         sx={{
           display: {
             xs: "block",

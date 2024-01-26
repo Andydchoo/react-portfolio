@@ -19,8 +19,20 @@ export default function About() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box
+      <a
+        className="anchor"
         id="About"
+        href="/#"
+        style={{
+          display: "block",
+          position: "relative",
+          top: "-68px",
+          visibility: "hidden",
+        }}
+      >
+        a
+      </a>
+      <Box
         sx={{
           pt: 3,
           pb: 6,
@@ -55,7 +67,7 @@ export default function About() {
           <Card variant="outlined" sx={{ mb: 4, flex: "1" }}>
             <CardMedia
               component="img"
-              src="../../assets/headshot.png"
+              src="assets/headshot.webp"
               alt="Andy Choo"
             />
           </Card>
@@ -93,10 +105,10 @@ export default function About() {
           spacing={3}
           justifyContent="center"
         >
-          <Button variant="contained" href="#Projects">
+          <Button variant="contained" href="#Projects" size="large">
             My Projects
           </Button>
-          <Button variant="outlined" href="#Contact">
+          <Button variant="outlined" href="#Contact" size="large">
             Contact me
           </Button>
         </Stack>

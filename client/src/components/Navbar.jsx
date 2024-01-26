@@ -1,22 +1,4 @@
-//  Plans
-
-//  - Make hover effect take up entire height of navbar for buttons
-//  - Fancy Animations would be nice
-
-//  Issues
-
-//  - Lines 92-109.
-//      -Typography begins to stop aligning left once large view begins.
-//      -Every item seems to stretch out until large view-width is reached.
-//      -Then it just constantly slides towards the middle, at the same width.
-//
-//  - Navigation links should work
-//      - Menu links dont work, but the navbar links do.
-//  - Breakpoints arent importing properly with display property
-//  - Icons on the right are awkwardly spaced on md size
-//  - Opacity on background is messed up
-
-import { React, useState, useRef } from "react";
+import { React, useState } from "react";
 import {
   AppBar,
   IconButton,
@@ -24,29 +6,21 @@ import {
   Box,
   Typography,
   Menu,
-  Container,
   Button,
   MenuItem,
-  Divider,
   Fade,
   CssBaseline,
 } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../styles/styles";
-import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import zIndex from "@mui/material/styles/zIndex";
 
 export default function Navbar() {
   const [anchorEl, setanchorEl] = useState(null);
 
   const pages = ["About", "Skills", "Projects", "Contact"];
-
-  const handleOpen = (e) => {
-    setanchorEl(e.currentTarget);
-  };
 
   const handleClose = () => {
     setanchorEl(null);
@@ -108,12 +82,8 @@ export default function Navbar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleClose}>
-                    <Button
-                      href={"#" + page}
-                      textAlign="center"
-                      sx={{ color: "text.main" }}
-                    >
-                      - {page}
+                    <Button href={"#" + page} sx={{ color: "text.main" }}>
+                      {page}
                     </Button>
                   </MenuItem>
                 ))}
@@ -159,7 +129,8 @@ export default function Navbar() {
                     fontWeight: "600",
                   }}
                 >
-                  //{page}
+                  {"//"}
+                  {page}
                 </Button>
               ))}
             </Box>
