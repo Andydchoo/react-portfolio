@@ -87,31 +87,32 @@ export default function About() {
                 display: { xs: "none", sm: "none", med: "none", lg: "block" },
               }}
             >
-              About me
+              Hello!
             </Typography>
             <Typography variant="h6" align="center" color="text.sub" paragraph>
-              I'm Andy, a proficient full-stack web developer, dedicated to
-              pursuing constant refinement of my skills through experience. My
-              passion lies in the act of creation and fostering creativity. In
-              my free time I love to build custom keyboards, and wake up for
-              early morning jogs.
+              I'm Andy, a full-stack web developer, committed to pursuing
+              constant growth and refinement of my skills. I am at my strongest
+              in any department where I may express technical skill, with my
+              creativity. In my free time I love creating digital paintings,
+              playing guitar, golf, pickleball, and resistance training in the
+              gym.
             </Typography>
           </Stack>
         </Container>
 
-        <Stack
+        {/* <Stack
           sx={{ pt: 4 }}
           direction="row"
           spacing={3}
           justifyContent="center"
         >
           <Button variant="contained" href="#Projects" size="large">
-            My Projects
+            Projects
           </Button>
           <Button variant="outlined" href="#Contact" size="large">
-            Contact me
+            Contact
           </Button>
-        </Stack>
+        </Stack> */}
       </Box>
     </ThemeProvider>
   );
